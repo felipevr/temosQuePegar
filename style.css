@@ -5,10 +5,9 @@ html, body{
 }
 
 body {
-    background-Image: URL("imgs/pokemon-background.png");
+    background-Image: URL("imgs/background-tile-texture.jpg");
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
 }
 
 h1 {
@@ -18,7 +17,8 @@ h1 {
 }
 
 h1 img {
-    height: 90px;
+    height: 250px;
+    margin-top: -80px;
 }
 
 .bola {
@@ -38,7 +38,7 @@ h1 img {
     top: 0;
     left: 0;
     border: 3px solid black;
-    background-color: red;
+    background-color: #1a0e4e;
     padding: 5px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
