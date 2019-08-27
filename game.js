@@ -15,8 +15,8 @@ function inicializaScore() {
 }
 
 function addBola() {
-    if (count == 10) {
-        gameOver();
+    if (count == 50) {
+        return; //gameOver();
     }
     var bola = document.createElement("div");
     bola.setAttribute("class", "bola");
@@ -30,14 +30,24 @@ function addBola() {
     bola.setAttribute("onclick", "estourar(this)");
 
     document.body.appendChild(bola);
+
+    animateEl(bola, 'fadeIn');
     count++
 }
 
-function estourar(elemento) {
-    document.body.removeChild(elemento);
+function estourar(bola) {
+    animateEl(bola, 'zoomOut', makeCallback(bola));
     pontuar();
     count--;
 }
+
+function makeCallback(bola) {
+    function callback() {
+        document.body.removeChild(bola);
+    }
+    return callback;
+}
+
 
 function pontuar() {
     score += 1;
